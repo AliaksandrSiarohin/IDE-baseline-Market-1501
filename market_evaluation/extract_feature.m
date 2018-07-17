@@ -9,7 +9,7 @@ netname = 'ResNet_50'; % network: CaffeNet  or ResNet_50
 
 % set your path to the prototxt and model
 model =  ['../models/market/' netname '/' netname '_test.prototxt'];
-weights = ['../output/market_train/IDE_' netname '.caffemodel']; 
+weights = ['../output/market_train/IDE_' netname '_iter_100000.caffemodel']; 
 net = caffe.Net(model, weights, 'test');
 
 if strcmp(netname, 'CaffeNet')
@@ -26,7 +26,7 @@ image_mean = mean_data;
 off = floor((size(image_mean,1) - im_size)/2)+1;
 image_mean = image_mean(off:off+im_size-1, off:off+im_size-1, :);
 
-ef_path = {'dataset/bounding_box_train/', 'dataset/bounding_box_test/', 'dataset/query/'};
+ef_path = {'dataset/bounding_box_train-no-aug/', 'dataset/bounding_box_test/', 'dataset/query/'};
 ef_name = {'train', 'test', 'query'};
 
 if ~exist('feat') 

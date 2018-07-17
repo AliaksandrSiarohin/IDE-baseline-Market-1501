@@ -3,7 +3,7 @@
 CAFFE=caffe
 DATASET=market
 NET=ResNet_50
-SNAPSHOTS_DIR=output/${DATASET}_train
+SNAPSHOTS_DIR=output/${DATASET}_train_aug
 
 LOG="experiments/logs/${DATASET}_re-id_${NET}.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 
